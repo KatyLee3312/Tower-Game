@@ -1,6 +1,7 @@
 import pygame
 import math
 import random
+import os
 
 from pygame.locals import *
 
@@ -11,20 +12,22 @@ badtimer=100
 badtimer1=0
 badguys=[[640,100]]
 healthvalue= 260
+accuracy = [0,0]
+cannonBalls=[]
 
 # ^^setting some local vars to be used later
 
-player = pygame.image.load("/home/klee6/Documents/Programming/towergame/cannon1small.png")
-background= pygame.image.load("/home/klee6/Documents/Programming/towergame/background.png")
-tower = pygame.image.load("/home/klee6/Documents/Programming/towergame/towersized.png")
-accuracy = [0,0]
-cannonBalls=[]
-cannonBall= pygame.image.load("/home/klee6/Documents/Programming/towergame/cannonBall.png")
-badGuyImg1 = pygame.image.load("/home/klee6/Documents/Programming/towergame/badguy.png")
-badGuyImg= badGuyImg1
-healthBar= pygame.image.load("/home/klee6/Documents/Programming/towergame/healthbarred.png")
-health= pygame.image.load("/home/klee6/Documents/Programming/towergame/healthbargreen.png")
-gameOver = pygame.image.load("/home/klee6/Documents/Programming/towergame/gameover.png")
+current_directory = os.getcwd()
+
+player = pygame.image.load(os.path.join(current_directory, "cannon1small.png"))
+background = pygame.image.load(os.path.join(current_directory, "background.png"))
+tower = pygame.image.load(os.path.join(current_directory, "towersized.png"))
+cannonBall= pygame.image.load(os.path.join(current_directory, "cannonBall.png"))
+badGuyImg1 = pygame.image.load(os.path.join(current_directory, "badguy.png"))
+badGuyImg = badGuyImg1
+healthBar = pygame.image.load(os.path.join(current_directory, "healthbarred.png"))
+health = pygame.image.load(os.path.join(current_directory, "healthbargreen.png"))
+gameOver = pygame.image.load(os.path.join(current_directory, "gameover.png"))
 
 #^^setting the image for everything on screen
 
